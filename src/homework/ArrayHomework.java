@@ -5,8 +5,9 @@ public class ArrayHomework {
 //        Խնդիր 1 — Հաշվել տվյալ թվի հանդիպումների քանակը
         int[] numbers = {6, 3, 8, 6, 1, 9, 6, 4, 2, 6};
         int p = 0;
+        int n = 6;
         for (int i = 0; i < numbers.length; i++) {
-            int n = 6;
+
             if (numbers[i] == n) {
                 p++;
             }
@@ -28,9 +29,11 @@ public class ArrayHomework {
         int q = 0;
         int y = 0;
         for (int i = 0; i < j.length; i++) {
+            y =0;
             for (int l = 0; l < i; l++) {
                 if (j[i] == j[l]) {
                     y++;
+
                 }
 
             }
