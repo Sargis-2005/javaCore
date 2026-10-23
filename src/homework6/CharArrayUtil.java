@@ -5,9 +5,9 @@ public class CharArrayUtil {
         char[] chars = {'J', 'a', 'v', 'a', ' ', 'i', 's', ' ', 'f', 'u', 'n', '!'};
 //        Խնդիր 1 — Տպել բոլոր սիմվոլները:
         for (char Char : chars) {
-
+            System.out.print(Char);
         }
-        System.out.print(chars);
+
         System.out.println();
 //        Խնդիր 2 — Հաշվել սիմվոլների քանակը:
 //        Տպել նաև զանգվածի առաջին և վերջին սիմվոլները։
@@ -21,10 +21,10 @@ public class CharArrayUtil {
         System.out.println("Last character: " + chars[chars.length - 1]);
 
 //       Խնդիր 3 — Հաշվել տրված սիմվոլի հանդիպումների քանակը:
-        char n = 'a';
+        char target = 'a';
         int y = 0;
         for (char aChar : chars) {
-            if (aChar == n) {
+            if (aChar == target) {
                 y++;
             }
         }
@@ -48,6 +48,9 @@ public class CharArrayUtil {
         }
         System.out.println("Vowels count: " + c);
 //        Խնդիր 5 — Հաշվել բաղաձայնների քանակը:
+        char n = ' ';
+        char q = '!';
+
         int z = 0;
         for (char aChar : chars) {
             if (aChar != 'a' &&
@@ -71,7 +74,7 @@ public class CharArrayUtil {
 //        Խնդիր 6 — Հաշվել բացատների քանակը։
         int t = 0;
         for (char aChar : chars) {
-            if (aChar == ' ') {
+            if (aChar == n) {
                 t++;
             }
         }
@@ -84,10 +87,12 @@ public class CharArrayUtil {
             chars[chars.length - 1 - i] = temp;
         }
 
-        for (int i = 0; i < chars.length; i++) {
-            System.out.print(chars[i]);
+        for (char aChar : chars) {
+            System.out.print(aChar);
+
         }
 
+        System.out.println();
         for (int i = 0; i < chars.length / 2; i++) {
             char temp = chars[i];
             chars[i] = chars[chars.length - 1 - i];
@@ -96,7 +101,6 @@ public class CharArrayUtil {
 
         for (int i = 0; i < chars.length; i++) {
         }
-        System.out.println();
 
 
 //        Խնդիր 8 — Փոխել մեծատառերը և փոքրատառերը:
@@ -124,10 +128,11 @@ public class CharArrayUtil {
         }
         System.out.println();
         // Խնդիր 9 — Փոխարինել տրված սիմվոլը:
-        char v = 'a';
+        char replaceTarget = 'a';
+        char replacement = '*';
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == v) {
-                chars[i] = '*';
+            if (chars[i] ==replaceTarget) {
+                chars[i] = replacement;
             }
             System.out.print(chars[i]);
 
@@ -138,19 +143,20 @@ public class CharArrayUtil {
         for (int i = 0; i < chars.length / 2; i++) {
             if (chars[i] != chars[chars.length - 1 - i]) {
                 isPalindrome = false;
+                break;
             }
-            break;
+
 
         }
         System.out.println("isPalindrome: " + isPalindrome);
 //        Bonus 1 — Գտնել սիմվոլի առաջին հանդիպման ինդեքսը:
         char[] chars1 = {'a', 'b', 'c', 'd'};
-        char target = 'a';
+        char target1 = 'a';
         int index = -1;
         for (int i = 0; i < chars1.length; i++) {
 
 
-            if (chars1[i] == target) {
+            if (chars1[i] == target1) {
                 index = i;
                 break;
             }
@@ -160,13 +166,14 @@ public class CharArrayUtil {
         boolean f = true;
         char[] m = {'J', 'a', 'v', 'a'};
         char[] u = {'J', 'a', 'v', 'a'};
-        for (int i = 0; i < m.length; i++) {
-            for (int j = i; j < u.length; j++) {
-                if (m[i] == u[j]) {
-                    f = true;
-                } else f = false;
-
-                break;
+        if (m.length != u.length) {
+            f = false;
+        } else {
+            for (int i = 0; i < m.length; i++) {
+                if (m[i] != u[i]) {
+                    f = false;
+                    break;
+                }
             }
         }
         System.out.print("Bonus 2 Arrays are equal: " + f);
