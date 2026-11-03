@@ -4,13 +4,14 @@ public class DynamicArray {
     private int[] array = new int[10];
     private int size = 0;
 
-    public void add(int n) {
+    public void add(int value) {
         if (size == array.length) {
             extend();
         }
-        array[size] = n;
+        array[size] = value;
         size++;
     }
+
     private void extend() {
         int[] newArray = new int[array.length * 2];
         for (int i = 0; i < array.length; i++) {
@@ -18,19 +19,22 @@ public class DynamicArray {
         }
         array = newArray;
     }
+
     public void print() {
         for (int i = 0; i < size; i++) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
     }
-    public int  getByIndex(int index) {
+
+    public int getByIndex(int index) {
         if (index < 0 || index >= size) {
             return -1;
         }
-     return array[index];
+        return array[index];
     }
-    public int getSize(){
+
+    public int getSize() {
         return size;
     }
 
