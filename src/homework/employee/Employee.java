@@ -1,0 +1,101 @@
+package homework.employee;
+
+import java.util.Objects;
+
+public class Employee {
+    private String name;
+    private String surname;
+    private String employeID;
+    private double salary;
+    private String company;
+    private String position;
+
+    public Employee() {
+
+    }
+
+    public Employee(String name, String surname, String employeID, double salary, String company, String position) {
+        this.name = name;
+        this.surname = surname;
+        this.employeID = employeID;
+        this.salary = salary;
+        this.company = company;
+        this.position = position;
+
+    }
+
+    public Employee(String s, String s1, String s2, String s3, String s4) {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getEmployeID() {
+        return employeID;
+    }
+
+    public void setEmployeID(String employeID) {
+        this.employeID = employeID;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employe = (Employee) o;
+        return Objects.equals(employeID, employe.employeID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(employeID);
+    }
+
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", employeID='" + employeID + '\'' +
+                ", salary=" + salary +
+                ", company='" + company + '\'' +
+                ", position='" + position + '\'' +
+                '}';
+    }
+}
